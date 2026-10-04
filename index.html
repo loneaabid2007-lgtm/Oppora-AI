@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Oppora AI — Student Opportunity Agent</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                Oppora<span>AI</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About</a>
+            </div>
+
+            <button class="nav-btn" onclick="startFinding()">
+                Find Opportunities
+            </button>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    AI-Powered Student Opportunity Agent
+                </div>
+
+                <h1>
+                    Find the right
+                    <span>opportunities</span>
+                    for your future.
+                </h1>
+
+                <p>
+                    Oppora AI analyzes your education, skills, interests,
+                    and goals to help you discover opportunities that
+                    actually fit you.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn" onclick="startFinding()">
+                        Find My Opportunities
+                    </button>
+
+                    <button class="secondary-btn" onclick="scrollToHow()">
+                        How It Works
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="how-it-works" id="how-it-works">
+
+            <div class="section-heading">
+                <p>HOW IT WORKS</p>
+
+                <h2>
+                    From your profile to your
+                    <span>next opportunity.</span>
+                </h2>
+            </div>
+
+            <div class="steps">
+
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Your Profile</h3>
+                    <p>
+                        Tell Oppora AI about your education,
+                        skills, interests and location.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>AI Analysis</h3>
+                    <p>
+                        The AI analyzes your profile and checks
+                        opportunities against your requirements.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Get Your Plan</h3>
+                    <p>
+                        Receive matched opportunities,
+                        eligibility information and next steps.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+<section class="finder" id="finder">
+
+    <div class="finder-heading">
+        <p>OPPORTUNITY FINDER</p>
+
+        <h2>
+            Tell us about <span>yourself.</span>
+        </h2>
+
+        <p class="finder-subtitle">
+            Give Oppora AI a few details so it can find opportunities
+            that match your profile.
+        </p>
+    </div>
+
+
+    <div class="profile-card">
+
+        <div class="form-group">
+            <label for="education">Education</label>
+
+            <select id="education">
+                <option value="">Select your education</option>
+                <option value="Class 10">Class 10</option>
+                <option value="Class 12">Class 12</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Postgraduate">Postgraduate</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="location">Location</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="e.g. Kashmir, India"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="skills">Skills</label>
+
+                <input
+                    type="text"
+                    id="skills"
+                    placeholder="e.g. HTML, Writing, Python"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <label for="interests">Interests</label>
+
+            <input
+                type="text"
+                id="interests"
+                placeholder="e.g. Technology, AI, Business"
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="opportunityType">
+                What are you looking for?
+            </label>
+
+            <select id="opportunityType">
+                <option value="">Select opportunity type</option>
+                <option value="Scholarships">Scholarships</option>
+                <option value="Internships">Internships</option>
+                <option value="Hackathons">Hackathons</option>
+                <option value="Competitions">Competitions</option>
+                <option value="Fellowships">Fellowships</option>
+                <option value="All">All Opportunities</option>
+            </select>
+        </div>
+
+
+        <button
+            class="find-btn"
+            onclick="analyzeProfile()"
+        >
+            <span>Find Opportunities</span>
+            <span>→</span>
+        </button>
+
+        <p id="formMessage" class="form-message"></p>
+
+    </div>
+
+</section>
+        <section class="about" id="about">
+
+            <div class="about-box">
+
+                <p class="small-title">ABOUT OPPORA AI</p>
+
+                <h2>
+                    Stop searching everywhere.
+                    <span>Start finding what fits.</span>
+                </h2>
+
+                <p>
+                    Scholarships, internships, hackathons and competitions
+                    are scattered across different platforms. Oppora AI
+                    brings the discovery process together and helps students
+                    understand which opportunities are worth applying for.
+                </p>
+
+            </div>
+
+        </section>
+<section class="agent-section" id="agent">
+
+    <div class="agent-heading">
+        <p>OPPORA AI AGENT</p>
+
+        <h2>
+            Your opportunities,
+            <span>analyzed by AI.</span>
+        </h2>
+
+        <p>
+            Oppora AI breaks your profile into multiple steps
+            to find, evaluate and prioritize opportunities.
+        </p>
+    </div>
+
+
+    <div class="agent-card">
+
+        <div class="agent-status">
+            <div class="agent-icon">
+                AI
+            </div>
+
+            <div>
+                <strong>Oppora AI Agent</strong>
+                <span id="agentStatus">
+                    Ready to analyze your profile
+                </span>
+            </div>
+        </div>
+
+
+        <div class="agent-steps">
+
+            <div class="agent-step" id="agentStep1">
+                <div class="agent-step-number">01</div>
+
+                <div>
+                    <h3>Profile Analysis</h3>
+
+                    <p>
+                        Understanding your education,
+                        skills and interests.
+                    </p>
+                </div>
+
+                <span class="agent-check">○</span>
+            </div>
+
+
+            <div class="agent-step" id="agentStep2">
+                <div class="agent-step-number">02</div>
+
+                <div>
+                    <h3>Opportunity Research</h3>
+
+                    <p>
+                        Searching the available opportunity
+                        pool for relevant options.
+                    </p>
+                </div>
+
+                <span class="agent-check">○</span>
+            </div>
+
+
+            <div class="agent-step" id="agentStep3">
+                <div class="agent-step-number">03</div>
+
+                <div>
+                    <h3>Eligibility Analysis</h3>
+
+                    <p>
+                        Checking whether opportunities
+                        fit your profile.
+                    </p>
+                </div>
+
+                <span class="agent-check">○</span>
+            </div>
+
+
+            <div class="agent-step" id="agentStep4">
+                <div class="agent-step-number">04</div>
+
+                <div>
+                    <h3>Match Explanation</h3>
+
+                    <p>
+                        Explaining why each opportunity
+                        matches your profile.
+                    </p>
+                </div>
+
+                <span class="agent-check">○</span>
+            </div>
+
+
+            <div class="agent-step" id="agentStep5">
+                <div class="agent-step-number">05</div>
+
+                <div>
+                    <h3>Application Action Plan</h3>
+
+                    <p>
+                        Creating clear next steps for
+                        applying to the best opportunities.
+                    </p>
+                </div>
+
+                <span class="agent-check">○</span>
+            </div>
+
+        </div>
+
+
+        <button
+            class="run-agent-btn"
+            onclick="runOpporaAgent()"
+        >
+            Run Oppora AI Agent
+        </button>
+
+
+        <div
+            id="agentOutput"
+            class="agent-output"
+        ></div>
+
+    </div>
+
+</section>
+    </main>
+  
+<section class="results" id="results">
+
+    <div class="results-heading">
+        <p>YOUR OPPORTUNITIES</p>
+
+        <h2>
+            Opportunities that <span>fit you.</span>
+        </h2>
+
+        <p>
+            Oppora AI analyzes your profile and ranks opportunities
+            based on your interests, skills and preferences.
+        </p>
+    </div>
+
+    <div id="opportunityList" class="opportunity-list">
+
+        <div class="empty-results">
+            <h3>No opportunities yet</h3>
+            <p>
+                Complete your profile above to discover
+                opportunities matched to you.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+    <footer>
+        <p>© 2026 Oppora AI. Built for WCC Launchpad 30.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
